@@ -6,7 +6,7 @@ import crypto from 'crypto';
  * @returns {string} The resulting HMAC hash in hexadecimal format.
  */
 export const hashNonce = ({ nonce }: { nonce: string }) => {
-  const hmac = crypto.createHmac('sha256', process.env.HMAC_SECRET_KEY!);
+  const hmac = crypto.createHmac('sha256', process.env.NEXT_PUBLIC_HMAC_SECRET_KEY!);
   hmac.update(nonce);
   return hmac.digest('hex');
 };
